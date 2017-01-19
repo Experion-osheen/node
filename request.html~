@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Requestor User</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/	bootstrap-datepicker3.css"/>
+ 	<link rel="stylesheet" type="text/css" href="user.css">
+	<meta charset="utf-8">
+</head>
+<body onload="getproject();">
+	<center>
+		<div id="head" class="container">
+		<div id="head1">Travel Requestor</div>
+		<div id="head2" class="container"><input type="button" id="button" value="logout" class=".btn-default"></div>
+		</div>
+	</center>
+	<div class="beauty container">
+		<div class="l1 container">
+			<ul class="list-group list1">
+				<li><a href="request.html">Request Travel</a></li>
+			</ul>
+		</div>
+		<div class="dropdown container">
+			  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+			  View Requests
+			  <span class="caret"></span></button>
+			  <ul class="dropdown-menu">
+			    <li><a href="all.html">All</a></li>
+			    <li><a href="onhold.html">On hold</a></li>
+			    <li><a href="approved.html">Approved</a></li>
+			    <li><a href="rejected.html">Rejected</a></li>
+			  </ul>
+		</div>
+	</div>
+	<div class="formfield container">
+		<form>
+		  <div class="form-group">
+		    <label for="empid">Emp id</label>
+		    <input type="text" class="form-control" id="empid">
+		  </div>
+		  <div class="form-group">
+		    <label for="proname">Project name</label>
+		    <select id="proname">
+		    </select>
+		  </div>
+		  <div class="form-group">
+		  	<label for="cause">Cause for travel</label>
+		  	 <textarea class="form-control" rows="5" id="cause"></textarea>
+		  </div>
+		  <div class="form-group">
+		    <label for="source">Source</label>
+		    <input type="text" class="form-control" id="source">
+		  </div>
+		  <div class="form-group">
+		    <label for="destination">Destiantion</label>
+		    <input type="text" class="form-control" id="destination">
+		  </div>
+		  <div class="form-group"> <!-- Date input -->
+	        <label class="control-label" for="fromdate">From Date</label>
+	        <input class="form-control" id="fromdate" name="fromdate" placeholder="MM/DD/YYY" type="text"/>
+     	  </div>
+     	  <div class="form-group"> <!-- Date input -->
+	        <label class="control-label" for="todate">To Date</label>
+	        <input class="form-control" id="todate" name="todate" placeholder="MM/DD/YYY" type="text"/>
+     	  </div>
+     	  <div class="form-group">
+		    <label for="no">No of days</label>
+		    <input type="text" class="form-control" id="no">
+		  </div>
+		  <div class="form-group">
+		    <label for="mode">Mode of Travel</label>
+		    <input type="text" class="form-control" id="mode">
+		  </div>
+		  <div class="form-group">
+			  <label for="sel1">Select Priority</label>
+			  <select class="form-control" id="sel1">
+			    <option>Normal</option>
+			    <option>Critical</option>
+			  </select>
+		</div>
+		<button type="button" class="btn btn-default" onclick="submit1()">Submit</button>
+		</form>
+
+	</div>
+<script type="text/javascript" src="request.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+var jwt = require('jsonwebtoken');
+var cookieparser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var express = require('express');
+var mysql = require('mysql');
+var cors = require('cors');
+var validator = require('validator');
+var userrouter=express.Router();
+var connection=mysql.createConnection({
+	host:"localhost",
+	user:"root",
+	password:"123",
+	database:"traveldb"
+});
+var app = express();
+app.use(cors());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.use(cookieparser());
+
+
+userrouter.post('/verify',function (request, response){

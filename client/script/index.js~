@@ -1,0 +1,75 @@
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+function login(){
+	var pass1=document.getElementById('password').value;
+	password = (Crypto.MD5(pass1)).toString();
+	console.log(password);
+	var httpObj=new	XMLHttpRequest();
+	httpObj.onreadystatechange=function(){
+		if(this.readyState=='4' && this.status=='200'){
+			
+			var result=this.responseText;
+			result=JSON.parse(result);
+			console.log(result);
+			if(result.message=="Login success"){
+				console.log(result.message);
+				sessionStorage.setItem("eid",document.getElementById('userid').value);
+				// console.log("qwerty");
+				console.log(result.user_type);
+				if(result.user_type=="user") {
+					
+					 window.location="user.html";
+				}
+					
+				else if(result.user_type=="admin") {
+					//window.location="admin.html";
+					 
+				}
+					
+			}
+			else
+				window.alert(result.message);
+
+		}
+	};
+
+	httpObj.open('POST','http://192.168.1.226:8081/login',true);
+	httpObj.setRequestHeader('content-type','application/x-www-form-urlencoded');
+	console.log(document.getElementById('userid').value);
+	httpObj.send('userid='+document.getElementById('userid').value+'&password='+password);
+}
+function validate(){
+	var id=document.getElementById('userid').value;
+	var pass=document.getElementById('password').value;
+	if(id=="" && pass==""){
+		window.alert("ID AND PASSWORD FIELD EMPTY");
+		return false;
+	}
+	else if(pass==""){
+		window.alert("PASSWORD FIELD EMPTY");
+		return false;
+	}
+
+	else if(id==""){
+		window.alert("ID FIELD EMPTY");
+		return false;
+	}
+	else{
+		login();
+	}
+	
+}
+

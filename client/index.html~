@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Requestor</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style/index.css">
+</head>
+<body>
+
+		<center class="vertical-center">
+			<div id="head1" class="container">
+				<div class="container" id="h2"><img src="images/images.jpeg" class="img-fluid" ></div>
+				<div class="container" id="h1">Travel Requestor</div>
+			</div>
+			<div class="container" id="block1">
+			 <center>
+				 <table class="table-responsive">
+				 <tr>
+					 <td>User ID  </td>
+					 <td></td>
+					 <td><input type="text" id="userid"></td>
+				 </tr>
+				 <tr><td>&nbsp;</td></tr> 
+				 <tr>
+				 	 <td>PassWord &nbsp;</td>
+				 	 <td></td>
+				 	 <td><input type="password" id="password"></td>
+				 </tr>
+			 	<tr><td>&nbsp;</td></tr>
+				 </table>
+				 <input type="button" value="Login" onclick="validate();" id="button1">
+			 </center>
+			</div>
+	   </center>
+<script type="text/javascript" src="script/index.js"></script>
+<script type="text/javascript" src="script/2.5.3-crypto-md5.js"></script>
+</body>
+</html>
